@@ -6,7 +6,7 @@ import requests
 st.set_page_config(page_title="나만의 반려 양서·파충류 추천기", page_icon="🦎", layout="centered")
 
 # ==============================================================================
-# [필수 구문 1: 리스트(list)] 총 51종의 파충류/양서류/거북류 데이터베이스 (학명 포함)
+# [필수 구문 1: 리스트(list)] 총 51종의 파충류/양서류/거북류 데이터베이스
 # ==============================================================================
 PETS_DB = [
     # --- 붙이류/야행성 게코 ---
@@ -37,7 +37,7 @@ PETS_DB = [
     {"name": "액키 모니터", "sci_name": "Varanus acanthurus", "type": "파충류(왕도마뱀)", "difficulty": "입문자", "min_age": 14, "max_away": 2, "min_home": 4, "personalities": ["활동적이고 교감을 원함", "호기심이 많고 도전을 즐김", "차분하고 꼼꼼함"], "desc": "성체 크기가 60~70cm 정도로 작아 가정에서 키우기 가장 적합한 소형 왕도마뱀입니다.", "tip": "핫존 온도를 50도 이상으로 높게 설정해주면 매우 활발하게 움직입니다."},
     {"name": "사바나 모니터", "sci_name": "Varanus exanthematicus", "type": "파충류(왕도마뱀)", "difficulty": "중급자", "min_age": 15, "max_away": 2, "min_home": 5, "personalities": ["활동적이고 교감을 원함", "호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "묵직한 체형과 온순한 성격을 가진 아프리카 출신 왕도마뱀으로 핸들링 교감이 가능합니다.", "tip": "비만이 되기 쉬우므로 설치류 대신 곤충 위주의 식단과 산책을 챙겨주세요."},
     {"name": "알거스 모니터", "sci_name": "Varanus panoptes", "type": "파충류(왕도마뱀)", "difficulty": "중급자", "min_age": 15, "max_away": 2, "min_home": 5, "personalities": ["호기심이 많고 도전을 즐김", "활동적이고 교감을 원함"], "desc": "뒷다리로 서서 주변을 살피는 '삼각대 자세'가 유명한 지능 높은 왕도마뱀입니다.", "tip": "활동량이 많고 크게 자라므로 넉넉한 사육 공간과 깊이 파고들 바닥재를 주세요."},
-    {"name": "워터 모니터", "sci_name": "Varanus salvator", "type": "파충류(왕도마뱀)", "difficulty": "숙련자", "min_age": 16, "max_away": 1, "min_home": 6, "personalities": ["호기심이 많고 도전을 즐김", "활동적이고 교감을 원함", "차분하고 꼼꼼함"], "desc": "지능이 매우 높고 수영을 잘하며 주인과 교감도 가능하지만 초대형으로 자라는 왕도마뱀입니다.", "tip": "성체가 2m 내외로 크므로 대형 물공간과 넓은 실내 사육 환경을 준비해야 합니다."},
+    {"name": "워터 모니터", "sci_name": "Varanus salvator", "type": "파충류(왕도마뱀)", "difficulty": "숙련자", "min_age": 16, "max_away": 1, "min_home": 6, "personalities": ["호기심이 많고 도전을 즐김", "활동적이고 교감을 원함", "차분하고 꼼꼼함"], "desc": "지능이 매우 높고 수영을 잘하며 주인과 교감도 가능하지만 초대형으로 자라는 왕도마뱀입니다.", "tip": "성체가 2m 내외로 크므로 대형 물공간과 넓은 실내 사육 환경을 준비해야 합니다.", "special_note": "📋 **법적 특이사항 (시설등록증 필수):** 국제적 멸종위기종(CITES 2급) 대형 파충류로 분류되어, 사육 전 관할 환경청에서 **사육시설 등록증**을 반드시 발급받아야 합법적으로 키울 수 있습니다!"},
     {"name": "나일 모니터", "sci_name": "Varanus niloticus", "type": "파충류(왕도마뱀)", "difficulty": "숙련자", "min_age": 16, "max_away": 1, "min_home": 6, "personalities": ["호기심이 많고 도전을 즐김", "차분하고 꼼꼼함"], "desc": "화려한 황금빛 점무늬를 가졌지만 야생성이 강하고 카리스마 넘치는 대형 왕도마뱀입니다.", "tip": "꼬리 치기와 물림에 주의해야 하며, 어릴 때부터 꾸준히 신뢰를 쌓는 것이 중요합니다."},
 
     {"name": "베일드 카멜레온", "sci_name": "Chamaeleo calyptratus", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 15, "max_away": 1, "min_home": 7, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "머리 위의 높은 볏(카스크)과 기분에 따라 변하는 체색이 신비로운 카멜레온입니다.", "tip": "고인 물을 먹지 않으므로 드리퍼로 물방울을 떨어뜨려 주고 통풍에 신경 쓰세요."},
@@ -140,10 +140,10 @@ def recommend_pets(age, away_days, home_hours, personality, experience):
 
 
 # ==============================================================================
-# [Streamlit UI 구성] 화면 디자인 및 결과 출력
+# [Streamlit UI 구성] 화면 디자인 및 결과 출력 (최대 10종 추천)
 # ==============================================================================
 st.title("🦎 나에게 딱 맞는 양서·파충류 추천기")
-st.write("라이프스타일과 성향을 선택하면, 51종의 파충류·양서류·거북 중 가장 잘 어울리는 **최대 5종**을 사진과 함께 추천해 드립니다!")
+st.write("라이프스타일과 성향을 선택하면, 51종의 파충류·양서류·거북 중 가장 잘 어울리는 **최대 10종**을 사진과 함께 추천해 드립니다!")
 st.divider()
 
 st.subheader("📋 나의 사육 환경 및 성향 선택")
@@ -172,11 +172,12 @@ with col2:
 
 st.divider()
 
-if st.button("🔍 나에게 맞는 반려생물 5종 추천받기!", use_container_width=True, type="primary"):
+if st.button("🔍 나에게 맞는 반려생물 최대 10종 추천받기!", use_container_width=True, type="primary"):
     candidates = recommend_pets(age, away_days, home_hours, personality, experience)
 
     if len(candidates) > 0:
-        pick_count = min(5, len(candidates))
+        # 최대 10종까지 중복 없이 무작위 추출
+        pick_count = min(10, len(candidates))
         picked_pets = random.sample(candidates, pick_count)
         
         st.balloons()
@@ -193,13 +194,16 @@ if st.button("🔍 나에게 맞는 반려생물 5종 추천받기!", use_contai
                     st.markdown(f"**분류:** {pet['type']} &nbsp;|&nbsp; **학명:** *{pet['sci_name']}*  \n**사육 난이도:** {stars}")
                     st.write(pet["desc"])
                     st.info(f"💡 **사육 핵심 팁:** {pet['tip']}")
+                    
+                    # 워터모니터 등 법적 특이사항이 있는 종일 경우 경고 박스로 강조 표시
+                    if "special_note" in pet:
+                        st.warning(pet["special_note"])
                 
                 with img_col:
                     img_url = get_pet_image(pet["sci_name"])
                     if img_url:
                         st.image(img_url, caption=pet["name"], use_container_width=True)
                     else:
-                        # 네트워크 차단 시 깨진 이미지 대신 깔끔한 안내 카드 표시
                         st.markdown(
                             f"""
                             <div style="background-color:#f0f2f6; border-radius:10px; padding:30px 10px; text-align:center; color:#555;">
@@ -211,8 +215,8 @@ if st.button("🔍 나에게 맞는 반려생물 5종 추천받기!", use_contai
                             unsafe_allow_html=True
                         )
                 
-        if len(candidates) > 5:
-            st.caption(f"*(전체 {len(candidates)}종의 후보 중 무작위로 5종이 선정되었습니다. 버튼을 다시 누르면 다른 조합이 추천됩니다!)*")
+        if len(candidates) > 10:
+            st.caption(f"*(전체 {len(candidates)}종의 후보 중 무작위로 10종이 선정되었습니다. 버튼을 다시 누르면 다른 조합이 추천됩니다!)*")
     else:
         st.warning("😅 입력하신 까다로운 조건에 모두 부합하는 생물을 찾지 못했습니다.")
         st.write("집을 비우는 날을 줄이거나 재택 시간을 늘려서 다시 검색해 보세요!")
