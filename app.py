@@ -5,7 +5,7 @@ import random
 st.set_page_config(page_title="나만의 반려 양서·파충류 추천기", page_icon="🦎", layout="centered")
 
 # ==============================================================================
-# [필수 구문 1: 리스트(list)] 총 51종의 파충류/양서류/거북류 데이터베이스
+# [필수 구문 1: 리스트(list)] 총 51종의 파충류/양서류/거북류 데이터베이스 (사진 URL 포함)
 # ==============================================================================
 PETS_DB = [
     # --- 붙이류/야행성 게코 ---
@@ -21,7 +21,7 @@ PETS_DB = [
     {"name": "납테일 게코", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 3, "min_home": 4, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "큰 머리와 동그란 눈, 꼬리 끝의 작은 뭉치가 매력적인 사막성 게코입니다.", "tip": "땅을 파는 습성이 있으므로 모래 바닥재를 두껍게 깔아주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Nephrurus_levis.jpg/400px-Nephrurus_levis.jpg"},
     {"name": "토케이 게코", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 15, "max_away": 2, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "화려한 푸른빛 몸에 주황색 반점이 있는 대형 게코로, '토케이'하고 우는 소리가 특징입니다.", "tip": "성격이 사납고 물 힘이 강하므로 관상 위주로 사육하는 것이 좋습니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gekko_gecko_01.jpg/400px-Gekko_gecko_01.jpg"},
 
-    # --- 스킨크/드래곤/모니터/카멜레온 ---
+    # --- 스킨크/드래곤/모니터(대폭 완화!)/카멜레온 ---
     {"name": "레드아이 아머드 스킨크", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 13, "max_away": 2, "min_home": 5, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "눈 주위의 붉은 테두리와 용의 비늘 같은 등갑이 멋진 소형 스킨크입니다.", "tip": "겁이 매우 많으므로 은신처를 충분히 만들어주고 고습도 환경을 유지하세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Tribolonotus_gracilis_01.jpg/400px-Tribolonotus_gracilis_01.jpg"},
     {"name": "화이트아이 아머드 스킨크", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 13, "max_away": 2, "min_home": 5, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "눈 주위가 하얀색을 띠는 아머드 스킨크로, 미니 드래곤 같은 외모가 매력입니다.", "tip": "조용하고 어두운 환경을 좋아하며 높은 습도가 필수입니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Tribolonotus_novaeguineae.jpg/400px-Tribolonotus_novaeguineae.jpg"},
     {"name": "파이어 스킨크", "type": "파충류(도마뱀)", "difficulty": "입문자", "min_age": 12, "max_away": 2, "min_home": 4, "personalities": ["차분하고 꼼꼼함", "느긋하고 귀차니즘이 있음"], "desc": "옆구리의 불타는 듯한 붉은색과 검은색 무늬가 화려한 지상성 스킨크입니다.", "tip": "바닥재 속으로 파고드는 것을 좋아하므로 에코어스 등을 깊게 깔아주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Lepidothyris_fernandi.jpg/400px-Lepidothyris_fernandi.jpg"},
@@ -32,7 +32,7 @@ PETS_DB = [
     {"name": "목도리 도마뱀", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 15, "max_away": 1, "min_home": 6, "personalities": ["호기심이 많고 도전을 즐김", "활동적이고 교감을 원함"], "desc": "목 주변의 커다란 프릴을 펼치는 모습과 두 발로 달리는 행동이 인상적인 도마뱀입니다.", "tip": "나무 위에서 생활하므로 높이가 높은 대형 사육장과 UVB 조명이 필수입니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Chlamydosaurus_kingii_01.jpg/400px-Chlamydosaurus_kingii_01.jpg"},
     {"name": "레그리스 리자드", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 3, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "뱀처럼 다리가 없지만 눈꺼풀과 귓구멍이 있는 신기한 무족 도마뱀입니다.", "tip": "뱀과 달리 턱이 벌어지지 않으므로 귀뚜라미나 달팽이 등 작은 먹이를 주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Pseudopus_apodus_01.jpg/400px-Pseudopus_apodus_01.jpg"},
 
-    # --- 모니터(왕도마뱀) ---
+    # --- 모니터(왕도마뱀) 5종: 중급자/숙련자 및 10대~성인 조건에서도 잘 나오도록 최적화 ---
     {"name": "액키 모니터", "type": "파충류(왕도마뱀)", "difficulty": "입문자", "min_age": 14, "max_away": 2, "min_home": 4, "personalities": ["활동적이고 교감을 원함", "호기심이 많고 도전을 즐김", "차분하고 꼼꼼함"], "desc": "성체 크기가 60~70cm 정도로 작아 가정에서 키우기 가장 적합한 소형 왕도마뱀입니다.", "tip": "핫존 온도를 50도 이상으로 높게 설정해주면 매우 활발하게 움직입니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Varanus_acanthurus_01.jpg/400px-Varanus_acanthurus_01.jpg"},
     {"name": "사바나 모니터", "type": "파충류(왕도마뱀)", "difficulty": "중급자", "min_age": 15, "max_away": 2, "min_home": 5, "personalities": ["활동적이고 교감을 원함", "호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "묵직한 체형과 온순한 성격을 가진 아프리카 출신 왕도마뱀으로 핸들링 교감이 가능합니다.", "tip": "비만이 되기 쉬우므로 설치류 대신 곤충 위주의 식단과 산책을 챙겨주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Varanus_exanthematicus_01.jpg/400px-Varanus_exanthematicus_01.jpg"},
     {"name": "알거스 모니터", "type": "파충류(왕도마뱀)", "difficulty": "중급자", "min_age": 15, "max_away": 2, "min_home": 5, "personalities": ["호기심이 많고 도전을 즐김", "활동적이고 교감을 원함"], "desc": "뒷다리로 서서 주변을 살피는 '삼각대 자세'가 유명한 지능 높은 왕도마뱀입니다.", "tip": "활동량이 많고 크게 자라므로 넉넉한 사육 공간과 깊이 파고들 바닥재를 주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Varanus_panoptes_horni.jpg/400px-Varanus_panoptes_horni.jpg"},
@@ -42,10 +42,10 @@ PETS_DB = [
     {"name": "베일드 카멜레온", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 15, "max_away": 1, "min_home": 7, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "머리 위의 높은 볏(카스크)과 기분에 따라 변하는 체색이 신비로운 카멜레온입니다.", "tip": "고인 물을 먹지 않으므로 드리퍼로 물방울을 떨어뜨려 주고 통풍에 신경 쓰세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Chamaeleo_calyptratus_01.jpg/400px-Chamaeleo_calyptratus_01.jpg"},
     {"name": "팬서 카멜레온", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 15, "max_away": 1, "min_home": 7, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "출신 지역(로칼)에 따라 무지개처럼 화려한 발색을 보여주는 카멜레온의 제왕입니다.", "tip": "스트레스에 민감하므로 메쉬 케이지에 살아있는 식물을 배치해 은신처를 만들어주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Furcifer_pardalis_01.jpg/400px-Furcifer_pardalis_01.jpg"},
 
-    # --- 뱀류 (볼 파이톤 -> 입문자 수정) ---
+    # --- 뱀류 ---
     {"name": "콘 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 12, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "활동적이고 교감을 원함"], "desc": "온순한 성격과 다양한 색상, 주 1회 급여의 편리함으로 최고의 입문용 뱀으로 꼽힙니다.", "tip": "좁은 틈으로 빠져나가는 탈출의 명수이므로 사육장 잠금장치를 꼭 확인하세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Pantherophis_guttatus_01.jpg/400px-Pantherophis_guttatus_01.jpg"},
     {"name": "호그노즈 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 14, "max_away": 4, "min_home": 3, "personalities": ["활동적이고 교감을 원함", "호기심이 많고 도전을 즐김"], "desc": "돼지코처럼 들린 주둥이가 귀엽고, 위협을 느끼면 죽은 척 연기하는 개성 만점 뱀입니다.", "tip": "약한 독(후아독)이 있지만 사람에게는 무해하며, 겁이 많아 거식할 때가 있습니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Heterodon_nasicus_01.jpg/400px-Heterodon_nasicus_01.jpg"},
-    {"name": "볼 파이톤", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 12, "max_away": 4, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함", "활동적이고 교감을 원함"], "desc": "위험을 느끼면 공처럼 몸을 마는 온순한 비단뱀으로, 수백 가지의 아름다운 모프와 튼튼한 생명력을 자랑합니다.", "tip": "환경 변화에 예민해 간혹 거식을 할 수 있으므로 온도와 습도를 일정하게 유지하세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Ball_python_lucy.JPG/400px-Ball_python_lucy.JPG"},
+    {"name": "볼 파이톤", "type": "파충류(뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 4, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함"], "desc": "위험을 느끼면 공처럼 몸을 마는 얌전한 비단뱀으로, 수백 가지의 아름다운 모프가 있습니다.", "tip": "환경 변화에 예민해 거식을 할 수 있으므로 온도와 습도를 일정하게 유지하세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Ball_python_lucy.JPG/400px-Ball_python_lucy.JPG"},
     {"name": "킹 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 13, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "먹성이 매우 뛰어나 거식 걱정이 거의 없고 튼튼한 입문용 뱀입니다.", "tip": "다른 뱀을 잡아먹는 습성이 있으므로 반드시 한 마리씩 단독 사육해야 합니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Lampropeltis_getula_californiae_01.jpg/400px-Lampropeltis_getula_californiae_01.jpg"},
     {"name": "밀크 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 13, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "독사인 산호뱀을 흉내 낸 붉은색·검은색·흰색의 화려한 띠무늬가 매력적인 온순한 뱀입니다.", "tip": "어릴 때는 예민해서 꼬리를 떨거나 배설물을 뿌릴 수 있지만 크면서 순해집니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Lampropeltis_triangulum_campbelli.jpg/400px-Lampropeltis_triangulum_campbelli.jpg"},
     {"name": "랫 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 14, "max_away": 5, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "활동성이 좋고 튼튼하며, 성장 속도가 빠르고 시원시원한 크기로 자라는 뱀입니다.", "tip": "나무를 잘 타므로 유목을 넣어주면 입체적으로 움직이는 모습을 볼 수 있습니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Pantherophis_obsoletus_01.jpg/400px-Pantherophis_obsoletus_01.jpg"},
@@ -53,10 +53,10 @@ PETS_DB = [
     {"name": "하우스 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 12, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함"], "desc": "아프리카 출신의 소형 뱀으로, 크기가 작고 온순하며 무지개빛 광택이 아름답습니다.", "tip": "작은 설치류를 잘 먹으며 사육 난이도가 매우 낮아 초보자에게 좋습니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Boaedon_fuliginosus.jpg/400px-Boaedon_fuliginosus.jpg"},
     {"name": "가터 스네이크", "type": "파충류(뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 3, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "차분하고 꼼꼼함"], "desc": "설치류 대신 미꾸라지, 지렁이, 개구리 등을 먹는 식성을 가진 날렵한 뱀입니다.", "tip": "신진대사가 빨라 다른 뱀보다 먹이를 자주(주 2회 정도) 주어야 합니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Thamnophis_sirtalis_01.jpg/400px-Thamnophis_sirtalis_01.jpg"},
 
-    # --- 양서류 (픽시 프로그 -> 입문자 수정) ---
+    # --- 양서류 (개구리/도롱뇽) ---
     {"name": "팩맨 개구리", "type": "양서류(개구리)", "difficulty": "입문자", "min_age": 10, "max_away": 3, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음"], "desc": "게임 캐릭터 '팩맨'처럼 커다란 입과 동그란 몸매를 가진 인기 양서류입니다.", "tip": "움직임이 거의 없어 좁은 곳에서도 키울 수 있지만, 피부 보호를 위해 핸들링은 피하세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ceratophrys_cranwelli_01.jpg/400px-Ceratophrys_cranwelli_01.jpg"},
     {"name": "버젯 프로그", "type": "양서류(개구리)", "difficulty": "중급자", "min_age": 14, "max_away": 2, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "납작하고 넙적한 얼굴과 괴성을 지르는 독특한 방어 행동으로 유명한 수생 개구리입니다.", "tip": "수질 관리가 중요하며, 턱 힘이 매우 강하므로 급여 시 핀셋을 꼭 사용하세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Lepidobatrachus_laevis_01.jpg/400px-Lepidobatrachus_laevis_01.jpg"},
-    {"name": "픽시 프로그", "type": "양서류(개구리)", "difficulty": "입문자", "min_age": 12, "max_away": 3, "min_home": 3, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함"], "desc": "성체 수컷이 20cm 이상 거대하게 자라는 '아프리카 황소개구리'로, 튼튼하고 먹성이 좋아 키우는 재미가 큽니다.", "tip": "엄청난 대식가이므로 비만이 되지 않도록 먹이 양을 조절해 주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pyxicephalus_adspersus_01.jpg/400px-Pyxicephalus_adspersus_01.jpg"},
+    {"name": "픽시 프로그", "type": "양서류(개구리)", "difficulty": "중급자", "min_age": 15, "max_away": 3, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "성체 수컷이 20cm 이상 거대하게 자라는 '아프리카 황소개구리'입니다.", "tip": "엄청난 대식가이므로 비만이 되지 않도록 먹이 양을 조절해 주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Pyxicephalus_adspersus_01.jpg/400px-Pyxicephalus_adspersus_01.jpg"},
     {"name": "팩꽁이 (판타지 프로그)", "type": "양서류(개구리)", "difficulty": "입문자", "min_age": 10, "max_away": 3, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함"], "desc": "팩맨 개구리와 버젯 프로그의 교잡종으로, 두 종의 귀여운 특징을 모두 가졌습니다.", "tip": "사육법은 팩맨 개구리와 동일하며, 촉촉한 바닥재와 깨끗한 물그릇을 유지해 주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ceratophrys_cranwelli_01.jpg/400px-Ceratophrys_cranwelli_01.jpg"},
     {"name": "사막비 개구리", "type": "양서류(개구리)", "difficulty": "숙련자", "min_age": 15, "max_away": 2, "min_home": 5, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "화났을 때 삑삑거리는 장난감 같은 울음소리와 둥근 몸매로 SNS에서 큰 인기를 끈 개구리입니다.", "tip": "야생 채집 개체가 많고 환경 세팅(특수 모래, 습도 조절)이 매우 까다로운 편입니다.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Breviceps_macrops_01.jpg/400px-Breviceps_macrops_01.jpg"},
     {"name": "청개구리", "type": "양서류(개구리)", "difficulty": "입문자", "min_age": 10, "max_away": 2, "min_home": 4, "personalities": ["차분하고 꼼꼼함", "느긋하고 귀차니즘이 있음"], "desc": "우리 주변에서도 볼 수 있는 친숙하고 귀여운 초록빛 나무개구리입니다.", "tip": "밤에 수컷이 큰 소리로 울 수 있으며, 수돗물은 염소를 제거한 뒤 사용해 주세요.", "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Dryophytes_japonicus_01.jpg/400px-Dryophytes_japonicus_01.jpg"},
@@ -123,7 +123,7 @@ def recommend_pets(age, away_days, home_hours, personality, experience):
 
 
 # ==============================================================================
-# [Streamlit UI 구성] 화면 디자인 및 결과 출력
+# [Streamlit UI 구성] 화면 디자인 및 결과 출력 (텍스트 + 오른쪽 사진 배치)
 # ==============================================================================
 st.title("🦎 나에게 딱 맞는 양서·파충류 추천기")
 st.write("라이프스타일과 성향을 선택하면, 51종의 파충류·양서류·거북 중 가장 잘 어울리는 **최대 5종**을 사진과 함께 추천해 드립니다!")
@@ -169,6 +169,7 @@ if st.button("🔍 나에게 맞는 반려생물 5종 추천받기!", use_contai
             stars = get_difficulty_stars(pet)
             
             with st.container(border=True):
+                # 카드를 왼쪽(설명: 비율 2)과 오른쪽(사진: 비율 1)으로 분할
                 info_col, img_col = st.columns([2, 1])
                 
                 with info_col:
@@ -178,6 +179,7 @@ if st.button("🔍 나에게 맞는 반려생물 5종 추천받기!", use_contai
                     st.info(f"💡 **사육 핵심 팁:** {pet['tip']}")
                 
                 with img_col:
+                    # 생물 사진 출력 (가로 폭에 맞춰 자동 조절)
                     st.image(pet["img"], caption=pet["name"], use_container_width=True)
                 
         if len(candidates) > 5:
