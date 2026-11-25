@@ -19,7 +19,7 @@ PETS_DB = [
     {"name": "팻테일 게코", "type": "파충류(도마뱀)", "difficulty": "입문자", "min_age": 10, "max_away": 3, "min_home": 3, "personalities": ["차분하고 꼼꼼함", "느긋하고 귀차니즘이 있음"], "desc": "통통한 꼬리와 초콜릿색 줄무늬가 귀여운 온순한 지상성 게코입니다.", "tip": "레오파드 게코보다 습도를 약간 더 높게(50~60%) 유지해 주세요."},
     {"name": "피쉬스케일 게코", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 2, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "위협을 받으면 물고기 비늘처럼 피부를 벗어던지고 도망가는 신기한 습성을 가졌습니다.", "tip": "피부가 매우 약하므로 절대 손으로 잡는 핸들링을 하지 마세요."},
     {"name": "납테일 게코", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 15, "max_away": 3, "min_home": 4, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "큰 머리와 동그란 눈, 꼬리 끝의 작은 뭉치가 매력적인 사막성 게코입니다.", "tip": "땅을 파는 습성이 있으므로 모래 바닥재를 두껍게 깔아주세요."},
-    {"name": "토케이 게코 (추가추천)", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 16, "max_away": 2, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "화려한 푸른빛 몸에 주황색 반점이 있는 대형 게코로, '토케이'하고 우는 소리가 특징입니다.", "tip": "성격이 사납고 물 힘이 강하므로 관상 위주로 사육하는 것이 좋습니다."},
+    {"name": "토케이 게코", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 16, "max_away": 2, "min_home": 4, "personalities": ["호기심이 많고 도전을 즐김", "느긋하고 귀차니즘이 있음"], "desc": "화려한 푸른빛 몸에 주황색 반점이 있는 대형 게코로, '토케이'하고 우는 소리가 특징입니다.", "tip": "성격이 사납고 물 힘이 강하므로 관상 위주로 사육하는 것이 좋습니다."},
 
     # --- 스킨크/드래곤/모니터/카멜레온 ---
     {"name": "레드아이 아머드 스킨크", "type": "파충류(도마뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 1, "min_home": 6, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "눈 주위의 붉은 테두리와 용의 비늘 같은 등갑이 멋진 소형 스킨크입니다.", "tip": "겁이 매우 많으므로 은신처를 충분히 만들어주고 고습도 환경을 유지하세요."},
@@ -37,14 +37,14 @@ PETS_DB = [
     {"name": "워터 모니터", "type": "파충류(왕도마뱀)", "difficulty": "숙련자", "min_age": 18, "max_away": 0, "min_home": 10, "personalities": ["호기심이 많고 도전을 즐김", "활동적이고 교감을 원함"], "desc": "지능이 매우 높고 수영을 잘하지만 성체가 2m 이상 자라는 초대형 왕도마뱀입니다.", "tip": "거대한 수영장과 초대형 사육 시설을 감당할 수 있는 전문가에게만 적합합니다."},
     {"name": "나일 모니터", "type": "파충류(왕도마뱀)", "difficulty": "숙련자", "min_age": 18, "max_away": 0, "min_home": 10, "personalities": ["호기심이 많고 도전을 즐김"], "desc": "화려한 무늬를 가졌지만 야생성이 강하고 사납기로 유명한 대형 왕도마뱀입니다.", "tip": "꼬리 치기와 물림 사고에 주의해야 하며, 초보자에게는 절대 권장하지 않습니다."},
     {"name": "베일드 카멜레온", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 16, "max_away": 0, "min_home": 10, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "머리 위의 높은 볏(카스크)과 기분에 따라 변하는 체색이 신비로운 카멜레온입니다.", "tip": "고인 물을 먹지 않으므로 드리퍼로 물방울을 떨어뜨려 주고 통풍에 신경 쓰세요."},
-    {"name": "팬서 카멜레온 (추가추천)", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 16, "max_away": 0, "min_home": 10, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "출신 지역(로칼)에 따라 무지개처럼 화려한 발색을 보여주는 카멜레온의 제왕입니다.", "tip": "스트레스에 민감하므로 메쉬 케이지에 살아있는 식물을 배치해 은신처를 만들어주세요."},
+    {"name": "팬서 카멜레온", "type": "파충류(도마뱀)", "difficulty": "숙련자", "min_age": 16, "max_away": 0, "min_home": 10, "personalities": ["차분하고 꼼꼼함", "호기심이 많고 도전을 즐김"], "desc": "출신 지역(로칼)에 따라 무지개처럼 화려한 발색을 보여주는 카멜레온의 제왕입니다.", "tip": "스트레스에 민감하므로 메쉬 케이지에 살아있는 식물을 배치해 은신처를 만들어주세요."},
 
     # --- 뱀류 ---
     {"name": "콘 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 12, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "활동적이고 교감을 원함"], "desc": "온순한 성격과 다양한 색상, 주 1회 급여의 편리함으로 최고의 입문용 뱀으로 꼽힙니다.", "tip": "좁은 틈으로 빠져나가는 탈출의 명수이므로 사육장 잠금장치를 꼭 확인하세요."},
     {"name": "호그노즈 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 14, "max_away": 4, "min_home": 3, "personalities": ["활동적이고 교감을 원함", "호기심이 많고 도전을 즐김"], "desc": "돼지코처럼 들린 주둥이가 귀엽고, 위협을 느끼면 죽은 척 연기하는 개성 만점 뱀입니다.", "tip": "약한 독(후아독)이 있지만 사람에게는 무해하며, 겁이 많아 거식할 때가 있습니다."},
     {"name": "볼 파이톤", "type": "파충류(뱀)", "difficulty": "중급자", "min_age": 14, "max_away": 4, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함"], "desc": "위험을 느끼면 공처럼 몸을 마는 얌전한 비단뱀으로, 수백 가지의 아름다운 모프가 있습니다.", "tip": "환경 변화에 예민해 거식을 할 수 있으므로 온도와 습도를 일정하게 유지하세요."},
     {"name": "킹 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 13, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "먹성이 매우 뛰어나 거식 걱정이 거의 없고 튼튼한 입문용 뱀입니다.", "tip": "다른 뱀을 잡아먹는 습성이 있으므로 반드시 한 마리씩 단독 사육해야 합니다."},
-    {"name": "밀크 스네이크 (추가추천)", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 13, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "독사인 산호뱀을 흉내 낸 붉은색·검은색·흰색의 화려한 띠무늬가 매력적인 온순한 뱀입니다.", "tip": "어릴 때는 예민해서 꼬리를 떨거나 배설물을 뿌릴 수 있지만 크면서 순해집니다."},
+    {"name": "밀크 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 13, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "독사인 산호뱀을 흉내 낸 붉은색·검은색·흰색의 화려한 띠무늬가 매력적인 온순한 뱀입니다.", "tip": "어릴 때는 예민해서 꼬리를 떨거나 배설물을 뿌릴 수 있지만 크면서 순해집니다."},
     {"name": "랫 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 14, "max_away": 5, "min_home": 3, "personalities": ["느긋하고 귀차니즘이 있음", "호기심이 많고 도전을 즐김"], "desc": "활동성이 좋고 튼튼하며, 성장 속도가 빠르고 시원시원한 크기로 자라는 뱀입니다.", "tip": "나무를 잘 타므로 유목을 넣어주면 입체적으로 움직이는 모습을 볼 수 있습니다."},
     {"name": "불 스네이크", "type": "파충류(뱀)", "difficulty": "중급자", "min_age": 16, "max_away": 4, "min_home": 3, "personalities": ["호기심이 많고 도전을 즐김"], "desc": "성체가 2m 가까이 자라는 대형 콜루브리드 뱀으로, 위협 시 쉭쉭거리는 큰 소리를 냅니다.", "tip": "소리는 무섭지만 실제로는 온순한 편이며, 큰 체격에 맞는 넓은 사육장이 필요합니다."},
     {"name": "하우스 스네이크", "type": "파충류(뱀)", "difficulty": "입문자", "min_age": 12, "max_away": 5, "min_home": 2, "personalities": ["느긋하고 귀차니즘이 있음", "차분하고 꼼꼼함"], "desc": "아프리카 출신의 소형 뱀으로, 크기가 작고 온순하며 무지개빛 광택이 아름답습니다.", "tip": "작은 설치류를 잘 먹으며 사육 난이도가 매우 낮아 초보자에게 좋습니다."},
@@ -67,15 +67,33 @@ PETS_DB = [
     {"name": "커먼 머스크 터틀", "type": "파충류(반수생거북)", "difficulty": "입문자", "min_age": 12, "max_away": 3, "min_home": 4, "personalities": ["차분하고 꼼꼼함", "느긋하고 귀차니즘이 있음"], "desc": "성체가 되어도 10~13cm 정도로 작아 어항에서 키우기 좋은 소형 반수생 거북입니다.", "tip": "수영 실력이 서툰 편이므로 물 깊이를 너무 깊지 않게 하고 발이 닿는 육지를 만들어주세요."},
     {"name": "레이져백 터틀", "type": "파충류(반수생거북)", "difficulty": "입문자", "min_age": 12, "max_away": 3, "min_home": 4, "personalities": ["차분하고 꼼꼼함", "느긋하고 귀차니즘이 있음"], "desc": "등갑 중앙이 면도날처럼 뾰족하게 솟아오른 모습이 멋진 소형 반수생 거북입니다.", "tip": "겁이 많은 편이라 유목이나 수초로 숨을 곳을 만들어주면 안정감을 느낍니다."},
     {"name": "페닌술라 워터 쿠터", "type": "파충류(반수생거북)", "difficulty": "중급자", "min_age": 14, "max_away": 3, "min_home": 5, "personalities": ["활동적이고 교감을 원함", "차분하고 꼼꼼함"], "desc": "노란 줄무늬와 활발한 유영이 매력적인 반수생 거북으로, 주인을 잘 알아봅니다.", "tip": "성체가 30cm 이상 크게 자라므로 대형 어항과 강력한 여과기, UVB 조명이 필수입니다."},
-    {"name": "동헤르만 육지거북 (추가추천)", "type": "파충류(육지거북)", "difficulty": "중급자", "min_age": 14, "max_away": 1, "min_home": 6, "personalities": ["차분하고 꼼꼼함", "활동적이고 교감을 원함"], "desc": "수명이 길고 온순하며 엉금엉금 걸어 다니는 모습이 귀여운 대표적인 입문용 육지거북입니다.", "tip": "초식성이므로 매일 신선한 엽채류와 칼슘제를 급여하고 UVB 램프를 켜주어야 합니다."}
+    {"name": "동헤르만 육지거북", "type": "파충류(육지거북)", "difficulty": "중급자", "min_age": 14, "max_away": 1, "min_home": 6, "personalities": ["차분하고 꼼꼼함", "활동적이고 교감을 원함"], "desc": "수명이 길고 온순하며 엉금엉금 걸어 다니는 모습이 귀여운 대표적인 입문용 육지거북입니다.", "tip": "초식성이므로 매일 신선한 엽채류와 칼슘제를 급여하고 UVB 램프를 켜주어야 합니다."}
 ]
 
 
 # ==============================================================================
-# [필수 구문 2: 함수(def)] 사용자 조건에 맞는 종을 필터링하는 핵심 알고리즘 함수
+# [필수 구문 2: 함수(def)] 조건에 맞는 생물 필터링 & 난이도 별점 계산 함수
 # ==============================================================================
+def get_difficulty_stars(pet):
+    """생물의 난이도와 케어 요구도(외출 허용일/재택 시간)를 계산해 최대 5개의 별(⭐)로 반환"""
+    if pet["difficulty"] == "입문자":
+        score = 1
+        # 입문종이라도 집을 비울 수 있는 날이 짧거나 손이 많이 가면 별 1개 추가
+        if pet["max_away"] <= 2 or pet["min_home"] >= 6:
+            score = 2
+    elif pet["difficulty"] == "중급자":
+        score = 3
+        if pet["max_away"] <= 1 or pet["min_home"] >= 6:
+            score = 4
+    else:
+        score = 5
+
+    return "⭐" * score + f" ({score}/5)"
+
+
 def recommend_pets(age, away_days, home_hours, personality, experience):
-    # 선택구조(if-elif-else)를 사용하여 문자열 경력을 숫자 레벨로 변환
+    """사용자 입력 조건을 바탕으로 적합한 생물 리스트를 반환하는 함수"""
+    # 선택구조(if-elif-else)로 경력 텍스트를 숫자 레벨로 변환
     if experience == "입문자":
         user_exp_level = 1
     elif experience == "중급자":
@@ -85,9 +103,8 @@ def recommend_pets(age, away_days, home_hours, personality, experience):
 
     matched_list = []
 
-    # 반복구조(for)를 사용하여 전체 데이터베이스(51종)를 하나씩 검사
+    # 반복구조(for)로 전체 데이터베이스(51종) 순회
     for pet in PETS_DB:
-        # 생물의 난이도를 숫자 레벨로 변환
         if pet["difficulty"] == "입문자":
             pet_exp_level = 1
         elif pet["difficulty"] == "중급자":
@@ -95,7 +112,7 @@ def recommend_pets(age, away_days, home_hours, personality, experience):
         else:
             pet_exp_level = 3
 
-        # 선택구조(if)를 통해 5가지 조건을 모두 만족하는지 판별
+        # 5가지 조건 모두 충족 시 후보 리스트에 추가
         if (age >= pet["min_age"] and 
             away_days <= pet["max_away"] and 
             home_hours >= pet["min_home"] and 
@@ -107,10 +124,10 @@ def recommend_pets(age, away_days, home_hours, personality, experience):
 
 
 # ==============================================================================
-# [Streamlit UI 구성] 화면 디자인 및 사용자 입력 처리
+# [Streamlit UI 구성] 화면 디자인 및 결과 출력 (최대 5종 추천)
 # ==============================================================================
 st.title("🦎 나에게 딱 맞는 양서·파충류 추천기")
-st.write("나의 라이프스타일과 성향을 선택하면, 51종의 파충류·양서류·거북 중 가장 잘 어울리는 반려생물을 추천해 드립니다!")
+st.write("라이프스타일과 성향을 선택하면, 51종의 파충류·양서류·거북 중 가장 잘 어울리는 **최대 5종**을 추천해 드립니다!")
 st.divider()
 
 st.subheader("📋 나의 사육 환경 및 성향 선택")
@@ -139,30 +156,29 @@ with col2:
 
 st.divider()
 
-# 추천 버튼 클릭 시 실행
-if st.button("🔍 나에게 맞는 반려생물 추천받기!", use_container_width=True, type="primary"):
-    # 정의한 함수 호출
+if st.button("🔍 나에게 맞는 반려생물 5종 추천받기!", use_container_width=True, type="primary"):
     candidates = recommend_pets(age, away_days, home_hours, personality, experience)
 
-    # 선택구조(if-else)를 사용하여 추천 결과 출력
     if len(candidates) > 0:
-        # 조건에 맞는 후보 중 random 라이브러리를 사용해 1종 무작위 선택
-        picked = random.choice(candidates)
+        # 후보가 5종 이상이면 random.sample()로 중복 없이 5종 추출, 5종 미만이면 있는 만큼 추출
+        pick_count = min(5, len(candidates))
+        picked_pets = random.sample(candidates, pick_count)
         
         st.balloons()
-        st.success(f"🎉 당신에게 가장 잘 어울리는 추천 생물은 **[{picked['name']}]** 입니다!")
+        st.success(f"🎉 조건에 맞는 총 {len(candidates)}종 중 **{pick_count}종**을 추천해 드립니다!")
         
-        with st.container(border=True):
-            st.markdown(f"### 🐾 {picked['name']}")
-            st.caption(f"분류: {picked['type']}  |  권장 난이도: {picked['difficulty']}")
-            st.write(picked["desc"])
-            st.info(f"💡 **사육 핵심 팁:** {picked['tip']}")
+        # 반복구조(for)를 이용해 추천된 생물 카드를 순서대로 출력
+        for idx, pet in enumerate(picked_pets, start=1):
+            stars = get_difficulty_stars(pet)
             
-        # 다른 후보군이 있을 경우 함께 안내
-        if len(candidates) > 1:
-            other_names = [p["name"] for p in candidates if p["name"] != picked["name"]]
-            st.write(f"✅ **함께 추천할 만한 다른 후보 ({len(other_names)}종):** {', '.join(other_names)}")
-            st.caption("*(버튼을 다시 누르면 조건에 맞는 다른 후보가 랜덤으로 추천됩니다!)*")
+            with st.container(border=True):
+                st.markdown(f"### {idx}. 🐾 {pet['name']}")
+                st.markdown(f"**분류:** {pet['type']} &nbsp;|&nbsp; **사육 난이도:** {stars}")
+                st.write(pet["desc"])
+                st.info(f"💡 **사육 핵심 팁:** {pet['tip']}")
+                
+        if len(candidates) > 5:
+            st.caption(f"*(전체 {len(candidates)}종의 후보 중 무작위로 5종이 선정되었습니다. 버튼을 다시 누르면 다른 조합이 추천됩니다!)*")
     else:
         st.warning("😅 입력하신 까다로운 조건에 모두 부합하는 생물을 찾지 못했습니다.")
         st.write("집을 비우는 날을 줄이거나 재택 시간을 늘려서 다시 검색해 보세요!")
